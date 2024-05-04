@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voxify</title>
+        <link rel="icon" href="https://icons.veryicon.com/png/o/miscellaneous/saas-template/headphone-42.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css"/>
+    </head>
+    <body>
+        <div id="container">
+            <h1>What you say?</h1>
+            <select id="voices">
+                <option>Select a voice</option>
+            </select>
+            <label>Rate:</label>
+            <input type="range" id="rate" value="1" min="0" max="3" step="0.1"/>
+            <label>Pitch:</label>
+            <input type="range" id="pitch" value="1" min="0" max="3" step="0.1"/>
+            <textarea id="textarea">Speak out!</textarea>
+            <div id="buttons">
+                <button id="stop-button">Stop</button>
+                <button id="speak-button">Speak</button>
+            </div>
+        </div>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
