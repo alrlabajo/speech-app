@@ -8,10 +8,10 @@ const speakButton = document.querySelector("#speak-button");
 const message = new SpeechSynthesisUtterance(textarea.value);
 let voices = [];
 
-function populateVoices(){
+function populateVoices() {
     voices = speechSynthesis.getVoices();
 
-    for(let i=0; i < voices.length; i++){
+    for (let i = 0; i < voices.length; i++) {
         const option = document.createElement("option");
         option.setAttribute("value", voices[i].name);
         option.textContent = voices[i].name;
@@ -20,38 +20,38 @@ function populateVoices(){
     }
 }
 
-function setVoice(){
-    for(let i=0; i < voices.length; i++){
-        if(voiceDropdown.value === voices[i].name){
+function setVoice() {
+    for (let i = 0; i < voices.length; i++) {
+        if (voiceDropdown.value === voices[i].name) {
             message.voice = voices[i];
         }
     }
 }
 
-function setRate(){
+function setRate() {
     message.rate = rateInput.value;
 }
 
-function setPitch(){
+function setPitch() {
     message.pitch = pitchInput.value;
 }
 
-function setText(){
+function setText() {
     message.text = textarea.value;
 }
 
-function stopVoice(){
+function stopVoice() {
     speechSynthesis.cancel();
 }
 
-function speakVoice(){
+function speakVoice() {
     speechSynthesis.speak(message);
 }
 
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
-voiceDropdown.addEventListener("changed", setVoice);
-rateInput.addEventListener("changed", setRate);
-pitchInput.addEventListener("changed", setPitch);
-textarea.addEventListener("changed", setText);
+voiceDropdown.addEventListener("change", setVoice);
+rateInput.addEventListener("change", setRate);
+pitchInput.addEventListener("change", setPitch);
+textarea.addEventListener("change", setText);
 stopButton.addEventListener("click", stopVoice);
 speakButton.addEventListener("click", speakVoice);
