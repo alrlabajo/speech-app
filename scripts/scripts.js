@@ -23,7 +23,7 @@ function populateVoices(){
 function setVoice(){
     for(let i=0; i < voices.length; i++){
         if(voiceDropdown.value === voices[i].name){
-            message.voice = voice[i];
+            message.voice = voices[i];
         }
     }
 }
