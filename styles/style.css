@@ -60,3 +60,8 @@ textarea {
 #buttons button :active {
     top: 2px;
 }
+
+#label {
+    padding: auto;
+    text-align: center;
+}

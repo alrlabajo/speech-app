@@ -53,5 +53,5 @@ voiceDropdown.addEventListener("changed", setVoice);
 rateInput.addEventListener("changed", setRate);
 pitchInput.addEventListener("changed", setPitch);
 textarea.addEventListener("changed", setText);
-stopButton.addEventListener("clicked", stopVoice);
-speakButton.addEventListener("clicked", speakVoice);
+stopButton.addEventListener("click", stopVoice);
+speakButton.addEventListener("click", speakVoice);
