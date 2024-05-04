@@ -3,7 +3,7 @@ const rateInput = document.querySelector("#rate");
 const pitchInput = document.querySelector("#pitch");
 const textarea = document.querySelector("#textarea");
 const stopButton = document.querySelector("#stop-button");
-const speakButton = document.querySelector("speak-button");
+const speakButton = document.querySelector("#speak-button");
 
 const message = new SpeechSynthesisUtterance(textarea.value);
 let voices = [];
