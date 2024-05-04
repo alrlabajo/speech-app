@@ -1,30 +1,31 @@
-const voicesDropdown = document.querySelector("#voices")
+const voiceDropdown = document.querySelector("#voices");
 const rateInput = document.querySelector("#rate");
 const pitchInput = document.querySelector("#pitch");
 const textarea = document.querySelector("#textarea");
 const stopButton = document.querySelector("#stop-button");
-const speakButton = document.querySelector("#speak-button");
+const speakButton = document.querySelector("speak-button");
 
 const message = new SpeechSynthesisUtterance(textarea.value);
 let voices = [];
 
-function populateVoices (){
+function populateVoices(){
     voices = speechSynthesis.getVoices();
 
-    for(let i = 0; i < voices.length; i++){
+    for(let i=0; i < voices.length; i++){
         const option = document.createElement("option");
         option.setAttribute("value", voices[i].name);
         option.textContent = voices[i].name;
 
-        voicesDropdown.appendChild(option);
+        voiceDropdown.appendChild(option);
     }
 }
 
 function setVoice(){
-    for(let i=0; i < voices.length; i++)
-        if(voicesDropdown.value === voices[i].name){
-            message.voice = voices[i];
+    for(let i=0; i < voices.length; i++){
+        if(voiceDropdown.value === voices[i].name){
+            message.voice = voice[i];
         }
+    }
 }
 
 function setRate(){
@@ -48,9 +49,9 @@ function speakVoice(){
 }
 
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
-voicesDropdown.addEventListener("change", setVoice);
-rateInput.addEventListener("change", setRate);
-pitchInput.addEventListener("change", setPitch);
-textarea.addEventListener("change", setText);
-stopButton.addEventListener("click", stopVoice)
-speakButton.addEventListener("click", speakVoice)
+voiceDropdown.addEventListener("changed", setVoice);
+rateInput.addEventListener("changed", setRate);
+pitchInput.addEventListener("changed", setPitch);
+textarea.addEventListener("changed", setText);
+stopButton.addEventListener("clicked", stopVoice);
+speakButton.addEventListener("clicked", speakVoice);
